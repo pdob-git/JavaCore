@@ -1,4 +1,4 @@
-
+package my;
 //My solution of lesson example
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class CompanyApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("Moje rozwiązanie");
         System.out.println("Wprowadzanie danych pracowników - " + INPUT_AND_SAVE_DATA);
         System.out.println("Wczytaj i wyświetl dane z pliku - " + READ_AND_OUTPUT_DATA);
         int option = scanner.nextInt();

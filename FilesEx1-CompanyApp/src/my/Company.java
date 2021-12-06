@@ -1,5 +1,6 @@
+package my;
+
 import java.io.Serializable;
-import java.util.Arrays;
 
 public class Company implements Serializable {
     private static final long serialVersionUID = 3L;

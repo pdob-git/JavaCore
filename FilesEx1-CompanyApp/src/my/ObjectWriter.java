@@ -1,3 +1,5 @@
+package my;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -8,7 +10,7 @@ class ObjectWriter {
     }
 
     public void saveCompany(Company company) {
-        String fileName = "Company.obj";
+        String fileName = "CompanyMy.obj";
 
         try(
                 var fs = new FileOutputStream(fileName);

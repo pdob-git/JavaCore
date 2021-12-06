@@ -1,3 +1,5 @@
+package my;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -8,7 +10,7 @@ class ObjectReader {
     }
 
     public Company readCompany() {
-        String fileName = "Company.obj";
+        String fileName = "CompanyMy.obj";
         Company company = null;
 
         try (
