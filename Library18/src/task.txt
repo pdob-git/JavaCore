@@ -1,0 +1,4 @@
+Poznaliśmy dwa sposoby zapisu i odczytu danych z plików.
+Program rozbudujemy o możliwość zapisu danych do pliku. Użytkownik będzie mógł zadecydować,
+czy chce zapisać dane w formie serializowanej, czy w pliku w formacie CSV. W tej części skupmy się na zapisie danych w
+formie binarnej/serializowanej. W drugiej części lekcji zajmiemy się zapisem w formie CSV.
