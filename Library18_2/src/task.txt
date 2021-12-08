@@ -1,0 +1,4 @@
+W drugiej części lekcji dodamy możliwość zapisu danych także w formie czytelnej dla człowieka w formie CSV.
+Może to być wygodniejsze rozwiązanie w sytuacji, gdybyśmy chcieli pracować na wprowadzonych danych także w innych
+programach np. MS Excel lub podobnych. Format CSV daje także możliwość przygotowania sobie w prosty sposób zestawu danych
+testowych, ponieważ jest to zwykły tekst rozdzielony średnikami (lub innym ustalonym separatorem).
