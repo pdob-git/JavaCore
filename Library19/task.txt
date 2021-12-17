@@ -1,0 +1,9 @@
+W zadaniu do samodzielnego wykonania pokazałem Ci, że klasa Arrays może być bardzo pomocna w przypadku, gdy chcemy napisać coś
+w stylu automatycznie rozszerzającej się tablicy. W naszym programie będzie to bardzo użyteczna opcja, bo dzięki temu nie
+będziemy już potrzebowali deklaracji ilości elementów w tablicy, bo w praktyce będzie ona ograniczona jedynie rozmiarem wartości
+typu int.
+
+Struktura projektu i większość kodu pozostaje bez zmian. Zmiany dotyczą klasy Library, a konkretnie metody addPublication()
+oraz nowej metody remove(), która pozwoli nam usuwać publikacje z biblioteki (np. gdy ktoś zgubi książkę). Metody te są bardzo
+podobne do rozwiązania zadania z tej lekcji. Zmienione są głównie zastosowane typy danych.
+
