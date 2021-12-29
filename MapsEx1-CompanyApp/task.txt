@@ -1,0 +1,13 @@
+Ćwiczenie
+
+Napisz prostą aplikację do zarządzania pracownikami w firmie. Powinna się ona składać z trzech klas:
+
+    Employee - przechowuje informacje o pracowniku (imię, nazwisko, wypłata),
+    Company - przechowuje informacje o pracownikach w postaci mapy,
+    CompanyApp - pozwala wczytywać dane od użytkownika, wybierać opcje itp.
+
+Aplikacja powinna posiadać 3 opcje:
+
+    Dodanie nowego pracownika,
+    wyszukanie informacji o pracowniku na podstawie imienia i nazwiska po czym wyświetlenie danych pracownika na ekranie (imię, nazwisko, wypłata),
+    wyjście z programu.
