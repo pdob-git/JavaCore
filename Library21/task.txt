@@ -1,0 +1,23 @@
+Library19
+W zadaniu do samodzielnego wykonania pokazałem Ci, że klasa Arrays może być bardzo pomocna w przypadku, gdy chcemy napisać coś
+w stylu automatycznie rozszerzającej się tablicy. W naszym programie będzie to bardzo użyteczna opcja, bo dzięki temu nie
+będziemy już potrzebowali deklaracji ilości elementów w tablicy, bo w praktyce będzie ona ograniczona jedynie rozmiarem wartości
+typu int.
+
+Struktura projektu i większość kodu pozostaje bez zmian. Zmiany dotyczą klasy Library, a konkretnie metody addPublication()
+oraz nowej metody remove(), która pozwoli nam usuwać publikacje z biblioteki (np. gdy ktoś zgubi książkę). Metody te są bardzo
+podobne do rozwiązania zadania z tej lekcji. Zmienione są głównie zastosowane typy danych.
+
+Library 20
+W aplikacji biblioteki sortowanie tablicy obiektów może być użyteczną opcją, dlatego warto zdefiniować naturalny porządek publikacji,
+a także dodatkowe komparatory w klasie Library,  np. do sortowania po latach lub w porządku alfabetycznym.
+
+Przez naturalny porządek publikacji najbardziej logiczne wydaje się sortowanie po ich tytule. Najłatwiej będzie je
+zrealizować poprzez implementowanie interfejsu Comparable w naszej abstrakcyjnej klasie Publication.
+
+Library21
+Mapy to kolekcje, które w przypadku danych takich jak książki, baza użytkowników etc. nadają się znakomicie, ponieważ
+umożliwią nam sprawne wyszukiwanie danych po kluczu (np. tytule książki).
+
+Na tym etapie warto dodać także możliwość obsługi użytkowników. Wystarczą nam zasadniczo takie dane jak imię, nazwisko
+i PESEL, bo na ich podstawie będziemy w stanie zweryfikować osobę po dowodzie osobistym.
