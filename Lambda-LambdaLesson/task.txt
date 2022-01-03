@@ -1,0 +1,10 @@
+Czego się dowiesz
+
+    Czym są wyrażenia lambda,
+    czym są interfejsy funkcyjne,
+    przykłady wykorzystania interfejsów Function, Consumer, Predicate
+
+
+Podsumowanie
+
+W tej lekcji pokazałem ci podstawową mechanikę korzystania z wyrażeń lambda. Zapamiętaj, że w Javie istnieje coś takiego jak interfejsy funkcyjne, czyli takie interfejsy, które mają tylko jedną metodę abstrakcyjną (mogą mieć także inne metody, np. domyślne, statyczne, albo prywatne). Do zmiennej tego typu można przypisać wyrażenie lambda, które będzie zgodne z metodą zdefiniowaną w takim interfejsie. Prawdziwe korzyści korzystania z wyrażeń lambda zobaczysz jednak, gdy połączymy je z operacjami na kolekcjach oraz strumieniach.
