@@ -1,0 +1,10 @@
+Ćwiczenie
+
+Napisz aplikację, w której z wykorzystaniem klasy Random i wyrażenia lambda wygenerujesz 10 losowych liczb (interfejs Supplier). Wyświetl listę (wszystkie liczby obok siebie, po spacji) na ekranie również wykorzystując wyrażenia lambda (interfejs Consumer).
+
+Następnie napisz metodę, która usunie z listy wszystkie liczby podzielne przez 2 (użyj iteratora i własnej metody wykorzystującej interfejs Predicate).
+
+Ponownie wyświetl wynik na ekranie.
+Podpowiedź
+
+Wzoruj się na kodzie przedstawionym w lekcji. Zdefiniuj kilka metod generycznych, które pozwolą wykonać czynności opisane w zadaniu.
