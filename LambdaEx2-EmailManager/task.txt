@@ -1,0 +1,5 @@
+Ćwiczenie
+
+W programie zdefiniowana jest klasa Email, która reprezentuje wiadomość elektroniczną, oraz lista obiektów tego typu. W klasie z metodą main() zdefiniowanych jest także kilka metod.
+
+Metody, które posiadają w nazwie słowo filter pozwalają przefiltrować listę i zwracają w wyniku listę z obiektami spełniającymi określony warunek. Problem polega na tym, że kod tych metod jest bardzo powtarzalny. Wykorzystując odpowiednie interfejsy funkcyjne i wyrażenia lambda, przerób kod programu, aby było w nim jak najmniej powtarzalnego kodu.
