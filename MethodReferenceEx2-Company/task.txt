@@ -1,0 +1,10 @@
+Ćwiczenie
+
+W przedstawionym kodzie programu została utworzona lista z 7 obiektami reprezentującymi pracowników. Następnie wykonywanych jest kilka operacji:
+
+    zwiększenie wypłaty pracowników zatrudnionych na pełen etat o 10%,
+    policzenie ilu jest pracowników zatrudnionych na pełen etat,
+    wyświetlenie wszystkich pracowników,
+    wyświetlenie pracownika, którego połączone imię i nazwisko mają łącznie najwięcej znaków (np. "Jan Ban" ma 6 znaków nie licząc spacji, a "Jan Kowalski" ma 11 znaków, więc z tych dwóch wybralibyśmy Jana Kowalskiego).
+
+Przerób kod w taki sposób, aby zachować aktualną funkcjonalność, ale żeby jednocześnie nie pojawiały się w nim żadne wyrażenie lambda. W programie wykorzystuj strumienie tak jak są one używane w tym momencie (metoda stream()). Nie możesz wykorzystywać np. pętli. Do kodu możesz dodawać dowolne metody i modyfikować te już istniejące.
