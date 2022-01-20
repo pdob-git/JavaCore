@@ -1,0 +1,7 @@
+Dobre praktyki
+
+Sprawne korzystanie z typu Optional wymaga dużo praktyki i konsekwencji, jednak jest kilka prostych reguł, które warto przestrzegać od samego początku.
+
+    Używaj typu Optional tylko jako typu zwracanego w metodach, w których istnieje potrzeba reprezentacji przypadku pustej wartości. Unikaj jego używania do definiowania zmiennych, pól klasy, czy parametrów metod / konstruktorów.
+    Unikaj definiowania zmiennych Optional w celu zastąpienia instrukcji if else.
+    Nigdy nie wywołuj metody get() bez wcześniejszego sprawdzenia, czy obiekt jest obecny przy pomocy metody isPresent(). Staraj się unikać sytuacji, gdy wywoływanie metody get() jest konieczne i preferuj w to miejsce np. metodę orElse() i podobne.
