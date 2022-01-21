@@ -1,0 +1,81 @@
+Library19
+W zadaniu do samodzielnego wykonania pokazałem Ci, że klasa Arrays może być bardzo pomocna w przypadku, gdy chcemy napisać coś
+w stylu automatycznie rozszerzającej się tablicy. W naszym programie będzie to bardzo użyteczna opcja, bo dzięki temu nie
+będziemy już potrzebowali deklaracji ilości elementów w tablicy, bo w praktyce będzie ona ograniczona jedynie rozmiarem wartości
+typu int.
+
+Struktura projektu i większość kodu pozostaje bez zmian. Zmiany dotyczą klasy Library, a konkretnie metody addPublication()
+oraz nowej metody remove(), która pozwoli nam usuwać publikacje z biblioteki (np. gdy ktoś zgubi książkę). Metody te są bardzo
+podobne do rozwiązania zadania z tej lekcji. Zmienione są głównie zastosowane typy danych.
+
+Library 20
+W aplikacji biblioteki sortowanie tablicy obiektów może być użyteczną opcją, dlatego warto zdefiniować naturalny porządek publikacji,
+a także dodatkowe komparatory w klasie Library,  np. do sortowania po latach lub w porządku alfabetycznym.
+
+Przez naturalny porządek publikacji najbardziej logiczne wydaje się sortowanie po ich tytule. Najłatwiej będzie je
+zrealizować poprzez implementowanie interfejsu Comparable w naszej abstrakcyjnej klasie Publication.
+
+Library21
+Mapy to kolekcje, które w przypadku danych takich jak książki, baza użytkowników etc. nadają się znakomicie, ponieważ
+umożliwią nam sprawne wyszukiwanie danych po kluczu (np. tytule książki).
+
+Na tym etapie warto dodać także możliwość obsługi użytkowników. Wystarczą nam zasadniczo takie dane jak imię, nazwisko
+i PESEL, bo na ich podstawie będziemy w stanie zweryfikować osobę po dowodzie osobistym.
+
+Library22
+Po zmianach przy eksporcie i imporcie danych część kodu w klasie CsvFileManager zaczęła się powtarzać. Spróbujmy uogólnić przynajmniej część kodu.
+
+W przypadku eksportu danych zarówno publikacje jak i użytkownicy posiadają metodę toCsv(). Klasy Publication i User nie są jednak połączone
+żadną hierarchią dziedziczenia, ani nie implementują wspólnego interfejsu, więc utrudnia to wydzielenie wspólnej logiki bez wykorzystania
+operatora instanceof i nieeleganckiej ifologii.
+Zamiast tego metodę toCsv() wydzielmy do osobnego interfejsu a następnie zaimplementujmy go w klasach Publication i User.
+
+Library23
+W starszej wersji naszego programu bibliotecznego, gdzie wykorzystywaliśmy tablice, przed wyświetleniem danych sortowaliśmy
+je za pomocą metody Arrays.sort(). Po zmianie reprezentacji danych na mapy musieliśmy niestety tę funkcjonalność usunąć.
+Przywrócenie dawnej funkcjonalności nie jest takie oczywiste, ponieważ metoda values() wywołana na mapie zwraca kolekcję
+typu Collection, a tej nie da się posortować żadną gotową metodą. Rozwiązaniem jest stworzenie na jej podstawie listy,
+a następnie jej posortowanie przy pomocy metody Collections.sort(). lub metody sort() z interfejsu List.
+
+W klasie Library zdefiniuję dodatkową metodę getSortedPublications(), która jako argument będzie przyjmowała komparator,
+którego chcemy użyć do sortowania. Analogiczną metodę definiuję także do pobierania kolekcji posortowanych czytelników.
+
+Library24
+Po wprowadzeniu wyrażeń lambda w Javie 8, niektóre z elementów Javy niemal całkowicie przestały być używane.
+
+Jednym z przykładów jest interfejs Comparator, który jest interfejsem funkcyjnym. Dawniej popularne było definiowanie
+obiektów klas anonimowych. Dzisiaj prawie się z tym nie spotkasz, ponieważ z wykorzystaniem wyrażeń lambda zapis jest
+bardziej zwięzły i czytelny. W naszej aplikacji możemy pozbyć się komparatorów i zastąpić je wyrażeniami lambda. Jeśli
+korzystasz z IntelliJ IDEA to w miejscu wykorzystania klasy wewnętrznej komparatora, środowisko zaproponuje zamianę na
+krótsze wyrażenie lambda po wciśnięciu skrótu Alt + Enter.
+
+Library25
+Referencje do metod pomagają jeszcze bardziej skrócić zapis w miejscach, w których stosujemy wyrażenia lambda.
+W naszym przypadku sortowania można uprościć odwołując się do metod Comparator.comparing() wprowadzonych w Javie 8.
+
+Library26
+W Javie 8 do klasy BufferedReader dodano przydatną metodę lines(), która zwraca strumień reprezentujący kolejne wiersze
+strumienia, na którym ten BufferedReader operuje. W przypadku odczytu pliku, zwrócony zostanie więc strumień z kolejnymi
+jego wierszami.
+
+Możemy z tego skorzystać w klasie do CsvFileManager i lekko zmodyfikować kod służący do odczytu danych, który do tej
+pory wykorzystywał Scannera i pętle.
+
+Library27
+Przetwarzanie kolekcji pojawia się w naszej aplikacji kilka razy. Pierwsze z nich to klasa ConsoleWriter, w której
+wyświetlamy informacje o książkach magazynach i użytkownikach. Możemy tam przerobić tradycyjne przechodzenie po kolekcji z użyciem pętli for each na przetwarzanie przy pomocy strumieni i metody forEach().
+
+Library28
+W chwili obecnej daty w klasach przechowujemy przy pomocy pól typu int. Osobno rok, miesiąc i dzień.
+Zamiast tego możemy wykorzystać odpowiednie typy, które pojawiły się w Date Time API w Javie 8.
+
+Library29
+W aktualnej wersji aplikacji typ Optional nie przydałby nam się raczej do niczego, ale możemy dodać kolejną funkcjonalność,
+która pozwoli wyszukać książkę na podstawie tytułu. W takiej sytuacji będziemy mieli do rozpatrzenia dwie sytuacje:
+
+- książka zostanie odnaleziona w mapie,
+
+- książka nie zostanie odnaleziona.
+
+Jest to idealny przypadek do tego, żeby wykorzystać właśnie Optionala. Zaczynamy od dodania metody zwracającej publikację
+na podstawie tytułu. Standardowo mogłaby ona wyglądać po prostu tak:
