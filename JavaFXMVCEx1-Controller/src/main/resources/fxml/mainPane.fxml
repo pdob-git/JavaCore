@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="133.0" prefWidth="207.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pdob.fxctrl.controller.MainPaneController">
+   <children>
+      <Label fx:id="firstLabel" text="Label" />
+      <Button fx:id="firstButton" mnemonicParsing="false" text="Button" />
+      <Label fx:id="secondLabel" text="Label" />
+      <Button fx:id="secondButton" mnemonicParsing="false" text="Button" />
+   </children>
+</VBox>
