@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,12 +29,16 @@ public class ControlPaneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Control controller created");
         configureButtons();
-        configureVolume();
+        configureSliders();
     }
 
-    private void configureVolume() {
-        volumeSlider.addEventFilter(MouseEvent.MOUSE_PRESSED, event ->
-                System.out.println("Wciśnięto przycisk na suwaku głośności")
+    private void configureSliders() {
+        volumeSlider.valueProperty().addListener((observable, oldValue, newValue) ->
+                System.out.println("Zmiana głośności " + newValue.doubleValue())
+        );
+
+        progressSlider.valueProperty().addListener(x ->
+                System.out.println("Przesunięcie piosenki")
         );
     }
 
