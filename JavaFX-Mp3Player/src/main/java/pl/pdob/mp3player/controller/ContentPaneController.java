@@ -31,7 +31,9 @@ public class ContentPaneController implements Initializable {
         createTestData();
     }
 
-
+    public TableView<Mp3Song> getContentTable() {
+        return contentTable;
+    }
 
     private void configureTableColumns() {
         TableColumn<Mp3Song, String> titleColumn = new TableColumn<Mp3Song, String>(TITLE_COLUMN);
