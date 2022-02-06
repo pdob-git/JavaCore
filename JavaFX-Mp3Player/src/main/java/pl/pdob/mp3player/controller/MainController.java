@@ -3,14 +3,15 @@ package pl.pdob.mp3player.controller;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TableView;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.farng.mp3.MP3File;
 import org.farng.mp3.TagException;
+import pl.pdob.mp3player.mp3.Mp3Parser;
 import pl.pdob.mp3player.mp3.Mp3Song;
 import pl.pdob.mp3player.player.Mp3Player;
 
@@ -38,7 +39,8 @@ public class MainController implements Initializable {
         createPlayer();
         configureTableClick();
         configureButtons();
-        addTestMp3();
+        configureMenu();
+//        addTestMp3();
     }
 
     private void createPlayer() {
@@ -100,12 +102,11 @@ public class MainController implements Initializable {
 
         playButton.setOnAction(event -> {
             if (playButton.isSelected()) {
-                if (contentTable.getSelectionModel().getSelectedIndex() == -1){
+                if (contentTable.getSelectionModel().getSelectedIndex() == -1 && !contentTable.getItems().isEmpty()){
                     playSelectedSong(0);
                 } else {
                     player.play();
                 }
-                System.out.println(contentTable.getSelectionModel().getSelectedIndex());
             } else {
                 player.stop();
             }
@@ -143,6 +144,32 @@ public class MainController implements Initializable {
             e.printStackTrace();
             return null; //ignore
         }
+    }
+
+    private void configureMenu() {
+        MenuItem openFile = menuPaneController.getFileMenuItem();
+        MenuItem openDir = menuPaneController.getDirMenuItem();
+
+        openFile.setOnAction(event -> {
+            FileChooser fc = new FileChooser();
+            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Mp3", "*.mp3"));
+            File file = fc.showOpenDialog(new Stage());
+            try {
+                contentPaneController.getContentTable().getItems().add(Mp3Parser.createMp3Song(file));
+            } catch (Exception e) {
+                e.printStackTrace(); //ignore
+            }
+        });
+
+        openDir.setOnAction(event -> {
+            DirectoryChooser dc = new DirectoryChooser();
+            File dir = dc.showDialog(new Stage());
+            try {
+                contentPaneController.getContentTable().getItems().addAll(Mp3Parser.createMp3List(dir));
+            } catch (Exception e) {
+                e.printStackTrace(); //ignore
+            }
+        });
     }
 
 }

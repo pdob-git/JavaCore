@@ -28,7 +28,7 @@ public class ContentPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         configureTableColumns();
-        createTestData();
+        //createTestData();
     }
 
     public TableView<Mp3Song> getContentTable() {
